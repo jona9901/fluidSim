@@ -1,5 +1,5 @@
 {
-    "colors": "cividis",
+    "colors": "BuPu",
     "densities":[
         {
             "xi": 25,
@@ -27,13 +27,13 @@
             "rotation": 0.1
         },
         {
-            "xi": 5,
-            "xj": 5,
-            "yi": 40,
-            "yj": 40,
+            "xi": 35,
+            "xj": 25,
+            "yi": 15,
+            "yj": 25,
             "vx": 1,
-            "vy": -2,
-            "rotation": 0
+            "vy": 2,
+            "rotation": 0.1
         }
     ],
     "solid":[
@@ -42,6 +42,12 @@
             "xj": 35,
             "yi": 35,
             "yj": 35
+        },
+        {
+            "xi": 10,
+            "xj": 45,
+            "yi": 45,
+            "yj": 45
         }
     ]
 }
