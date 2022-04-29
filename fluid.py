@@ -169,8 +169,8 @@ if __name__ == "__main__":
         f = open("input.json")
         input = json.load(f)
         f.close
-        palette = input["palette"]
-        sources = input["source"]
+        colors = input["colors"]
+        densities = input["densities"]
         velocities = input["velocity"]
         solids = input["solid"]
         
@@ -178,7 +178,7 @@ if __name__ == "__main__":
 
         def update_im(i):
             # We add new density creators in here
-            for d in sources:
+            for d in densities:
                 if d["xi"] == d["xj"]:
                     d["xj"] += 1
                 if d["yi"] == d["yj"]:
@@ -209,12 +209,12 @@ if __name__ == "__main__":
             im.autoscale()
         fig = plt.figure() 
         # plot density
-        im = plt.imshow(inst.density, vmax=100, interpolation='bilinear', cmap=palette)
+        im = plt.imshow(inst.density, vmax=100, interpolation='bilinear', cmap=colors)
 
         # plot vector field
         q = plt.quiver(inst.velo[:, :, 1], inst.velo[:, :, 0], scale=10, angles='xy')
         anim = animation.FuncAnimation(fig, update_im, interval=0)
-        # anim.save("movie.mp4", fps=30, extra_args=['-vcodec', 'libx264'])
+        anim.save("anim2.mp4", fps=30, extra_args=['-vcodec', 'libx264'])
         plt.show()
 
     except ImportError:
